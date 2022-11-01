@@ -1,0 +1,5 @@
+C:\Users\19518\Desktop\CSE-210\Collisiosi\obj\Debug\net6.0\Collisiosi.csproj.AssemblyReference.cache
+C:\Users\19518\Desktop\CSE-210\Collisiosi\obj\Debug\net6.0\Collisiosi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\19518\Desktop\CSE-210\Collisiosi\obj\Debug\net6.0\Collisiosi.AssemblyInfoInputs.cache
+C:\Users\19518\Desktop\CSE-210\Collisiosi\obj\Debug\net6.0\Collisiosi.AssemblyInfo.cs
+C:\Users\19518\Desktop\CSE-210\Collisiosi\obj\Debug\net6.0\Collisiosi.csproj.CoreCompileInputs.cache
