@@ -1,6 +1,7 @@
 ﻿using Raylib_cs;
 using System.Numerics;
 
+
     static class Program{
         public static void Main()
         {
@@ -10,8 +11,8 @@ using System.Numerics;
             var RectangleSize = 50;
 
             var PlayerRectangle = new Rectangle(ScreenWidth - (RectangleSize * 2), ScreenHeight - (RectangleSize * 2), RectangleSize, RectangleSize);
-            var TargetRectangle = new Rectangle(100, 100, RectangleSize, RectangleSize);
-            var MovementSpeed = 4;
+            // var MovementSpeed = 4;
+
 
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "Ball");
             Raylib.SetTargetFPS(60);
@@ -21,20 +22,14 @@ using System.Numerics;
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.BLACK);
 
-                if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
-                    PlayerRectangle.x += MovementSpeed;
-                }
+                var player = new Player();
+                player.inputs();
 
-                if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
-                    PlayerRectangle.x -= MovementSpeed;
-                }
-
-                Raylib.DrawRectangleRec(TargetRectangle, Color.BLUE);
                 Raylib.DrawRectangleRec(PlayerRectangle, Color.RED);
 
-                if (Raylib.CheckCollisionRecs(PlayerRectangle, TargetRectangle)) {
-                    Raylib.DrawText("You did it!!!!", 12, 34, 20, Color.BLACK);
-                }
+                // if (Raylib.CheckCollisionRecs(PlayerRectangle, TargetRectangle)) {
+                //     Raylib.DrawText("You did it!!!!", 12, 34, 20, Color.BLACK);
+                // }
 
                 Raylib.EndDrawing();
             }

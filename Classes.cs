@@ -3,7 +3,7 @@
 using Raylib_cs;
 using System.Numerics;
 
-abstract class fallingObject{
+public class fallingObject{
     public Vector2 Position { get; set; } = new Vector2(0, 0);
     public Vector2 Velocity { get; set; } = new Vector2(0, 0);
 
@@ -16,7 +16,7 @@ abstract class fallingObject{
         NewPosition.X += Velocity.X;
         NewPosition.Y += Velocity.Y;
         Position = NewPosition;
-}
+}}
 
 
 
@@ -51,10 +51,10 @@ public class Rocks: ColoredObject {
 }
 
 
-    override public void Draw() {
-        Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
-    }
-}
+//     override public void Draw() {
+//         Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
+//     }
+// }
 
 
 public class Player{
@@ -63,11 +63,12 @@ public class Player{
     int ScreenWidth = 800;
     int RectangleSize = 50;
     int MovementSpeed = 5;
+    Rectangle PlayerRectangle;
+
     public Player(){
-        
         PlayerRectangle = new Rectangle(ScreenWidth - (RectangleSize * 2), ScreenHeight - (RectangleSize * 2), RectangleSize, RectangleSize);
     }
-    Rectangle PlayerRectangle;
+
 
     public void inputs(){
         if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
@@ -77,10 +78,7 @@ public class Player{
         if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
             PlayerRectangle.x -= MovementSpeed;
             }}
-    // set a start a postion
 
-
-    // use player movement code
 }
     
 class Score{
