@@ -1,9 +1,7 @@
-// Here we addded the proper libraries for the classes to work
-
 using Raylib_cs;
 using System.Numerics;
 
-public class fallingObject{
+class fallingObjects {
     public Vector2 Position { get; set; } = new Vector2(0, 0);
     public Vector2 Velocity { get; set; } = new Vector2(0, 0);
 
@@ -16,11 +14,9 @@ public class fallingObject{
         NewPosition.X += Velocity.X;
         NewPosition.Y += Velocity.Y;
         Position = NewPosition;
-}}
+    }}
 
-
-
-public class ColoredObject: fallingObject {
+class ColoredObject: fallingObjects {
     public Color Color { get; set; }
 
     public ColoredObject(Color color) {
@@ -28,17 +24,11 @@ public class ColoredObject: fallingObject {
     }
 }
 
-public class Gems: ColoredObject {
+
+class Rock: ColoredObject {
     public int Size { get; set; }
 
-    public Gems(Color color, int size): base(color) {
-        Size = size;
-    }
-
-public class Rocks: ColoredObject {
-    public int Size { get; set; }
-
-    public Rocks(Color color, int size): base(color) {
+    public Rock(Color color, int size): base(color) {
         Size = size;
     }
 
@@ -46,41 +36,19 @@ public class Rocks: ColoredObject {
         Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
     }
 }
-    // set the shape to rectangle 
-    
-}
 
+class Gem: ColoredObject {
 
-//     override public void Draw() {
-//         Raylib.DrawRectangle((int)Position.X, (int)Position.Y, Size, Size, Color);
-//     }
-// }
+    public int Radius { get; set; }
 
+    public Gem(Color color, int radius): base(color) {
+        Radius = radius;}
 
-public class Player{
-    // creates a circle for the "player"
-    int ScreenHeight = 480;
-    int ScreenWidth = 800;
-    int RectangleSize = 50;
-    int MovementSpeed = 5;
-    Rectangle PlayerRectangle;
-
-    public Player(){
-        PlayerRectangle = new Rectangle(ScreenWidth - (RectangleSize * 2), ScreenHeight - (RectangleSize * 2), RectangleSize, RectangleSize);
+    override public void Draw(){
+        Raylib.DrawCircle((int)Position.X, (int)Position.Y, Radius, Color);
     }
-
-
-    public void inputs(){
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
-            PlayerRectangle.x += MovementSpeed;
-            }
-
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
-            PlayerRectangle.x -= MovementSpeed;
-            }}
-
 }
-    
+
 class Score{
     // set score attribute to 0 and use a constructor to do so
     int score = 0;
@@ -96,10 +64,17 @@ class Score{
     // it is a method that will subtract 1 from the score if that happens
     public void SubtractfromScore(int score){
     score += 1;
-    }
+    }}
+class Player{
+
+}
+class Visuals{
+    
+}
 
     // get the score from the object and display it wit4h the raylib method
-    public void displayScore(){
-        Console.Write("Score:${score}");
-    }
-}
+    // public void displayScore(){
+    //     override public void Draw(){
+    //     ;
+//     }
+// }
