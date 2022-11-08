@@ -64,7 +64,12 @@ class Score{
     // it is a method that will subtract 1 from the score if that happens
     public void SubtractfromScore(int score){
     score += 1;
-    }}
+    }
+
+    public int ReturnScore(){
+        return score;
+    }
+}
 class Player{
 
 }

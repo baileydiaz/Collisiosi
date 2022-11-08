@@ -15,6 +15,7 @@ namespace HelloWorld
             var Score = new Score();
             var PlayerRectangle = new Rectangle(ScreenWidth / 2, ScreenHeight - 30 , 20, 20);
             var MovementSpeed = 4;
+            int ReturnScore = Score.ReturnScore();
 
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
             Raylib.SetTargetFPS(60);
@@ -30,6 +31,7 @@ namespace HelloWorld
                 // Each object will start about the center of the screen
                 var position = new Vector2(RandomX, 0);
 
+                
                 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
                 if (PlayerRectangle.x < 780)
@@ -71,6 +73,7 @@ namespace HelloWorld
                 // Draw all of the objects in their current location
                 foreach (var obj in Objects) {
                     obj.Draw();
+                    Raylib.DrawText($"Score: {ReturnScore}", 12, 12, 20, Color.GREEN);
                 }
 
                 // foreach (var obj in Objects) {
@@ -85,6 +88,7 @@ namespace HelloWorld
                 foreach (var obj in Objects) {
                     obj.Move();
                 }
+                
             }
 
             Raylib.CloseWindow();

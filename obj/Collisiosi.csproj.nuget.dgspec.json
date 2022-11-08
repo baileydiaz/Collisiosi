@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\19518\\Desktop\\CSE-210\\Collisiosi\\Collisiosi.csproj": {}
+    "C:\\Users\\justi\\OneDrive\\Desktop\\Justin\\BYU-Idaho\\Fall 2022 Semester\\CSE 220\\jumper\\Collisiosi\\Collisiosi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\19518\\Desktop\\CSE-210\\Collisiosi\\Collisiosi.csproj": {
+    "C:\\Users\\justi\\OneDrive\\Desktop\\Justin\\BYU-Idaho\\Fall 2022 Semester\\CSE 220\\jumper\\Collisiosi\\Collisiosi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\19518\\Desktop\\CSE-210\\Collisiosi\\Collisiosi.csproj",
+        "projectUniqueName": "C:\\Users\\justi\\OneDrive\\Desktop\\Justin\\BYU-Idaho\\Fall 2022 Semester\\CSE 220\\jumper\\Collisiosi\\Collisiosi.csproj",
         "projectName": "Collisiosi",
-        "projectPath": "C:\\Users\\19518\\Desktop\\CSE-210\\Collisiosi\\Collisiosi.csproj",
-        "packagesPath": "C:\\Users\\19518\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\19518\\Desktop\\CSE-210\\Collisiosi\\obj\\",
+        "projectPath": "C:\\Users\\justi\\OneDrive\\Desktop\\Justin\\BYU-Idaho\\Fall 2022 Semester\\CSE 220\\jumper\\Collisiosi\\Collisiosi.csproj",
+        "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\justi\\OneDrive\\Desktop\\Justin\\BYU-Idaho\\Fall 2022 Semester\\CSE 220\\jumper\\Collisiosi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\19518\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
