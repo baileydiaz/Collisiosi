@@ -17,18 +17,22 @@ namespace HelloWorld
             Player player = new Player(MovementSpeed, PlayerRectangle);
             RandomObject Grandparent = new RandomObject();
             int CurrentScore = Score.score;
-            
+            int i = 0;
 
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
             Raylib.SetTargetFPS(60);
 
             while (!Raylib.WindowShouldClose())
             {
-
+                i += 1;
 
                 Vector2 RandPosition = Grandparent.GenerateRandomPosition();
                 int Case = Grandparent.GenerateRandomCase();
+
+                int thing = i % 10;
+                if (thing == 0){
                 Grandparent.GenerateRandomObject(RandPosition, Case);
+                }
 
                 player.input();
                 player.drawplayer();
@@ -45,7 +49,15 @@ namespace HelloWorld
                 // foreach (var obj in Objects) {
                 //     if (obj.position.RandomX > 801){
                 //     }
-
+                foreach (var obj in Grandparent.Objects.ToList()){
+                    if (obj is Rock){
+                        var therock = (Rock)obj;
+                        var Squarerectangle = new Rectangle (therock.Position.x, therock.Position.y, therock.Size, therock.Size);
+                        if (Raylib.CheckCollisionRecs(PlayerRectangle, Squarerectangle)){
+                            Score.AddtoScore();
+                        }
+                    }
+                }
                 foreach (var obj in Grandparent.Objects) {
                     obj.Move();
                 }
