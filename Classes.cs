@@ -1,7 +1,59 @@
 using Raylib_cs;
 using System.Numerics;
 
-class fallingObjects {
+public class RandomObject{
+    public List<fallingObjects> Objects {get; set;} = new List<fallingObjects>();
+    public RandomObject(){
+
+    }
+
+    public Vector2 GenerateRandomPosition(){
+        var Random = new Random();
+        var RandomX = Random.Next(1, 800);
+        var position = new Vector2(RandomX, 0);
+        return position;
+    }
+
+    public int GenerateRandomCase(){
+        var Random = new Random();
+        int whichType = Random.Next(2);
+        return whichType;
+    }
+
+    public void GenerateRandomObject(Vector2 position, int whichType){
+    switch (whichType) {
+        case 0:
+        Console.WriteLine("Creating a square");
+        var square = new Rock(Color.YELLOW, 20);
+        square.Position = position;
+        square.Velocity = new Vector2(0, 1);
+        Objects.Add(square);
+        break;
+        case 1:
+        Console.WriteLine("Creating a circle");
+         var circle = new Gem(Color.RED, 20);
+        circle.Position = position;
+        circle.Velocity = new Vector2(0, 1);
+        Objects.Add(circle);
+        break;
+        default:
+        break;
+            }
+    }
+
+
+    public void DrawObjects(List<fallingObjects> Objects, int Score){
+        foreach (var obj in Objects) {
+                Raylib.DrawText($"Score: {Score}", 12, 12, 20, Color.GREEN);
+                obj.Draw();
+                }
+    }
+
+
+
+}
+
+public class fallingObjects {
     public Vector2 Position { get; set; } = new Vector2(0, 0);
     public Vector2 Velocity { get; set; } = new Vector2(0, 0);
 
@@ -51,7 +103,7 @@ class Gem: ColoredObject {
 
 class Score{
     // set score attribute to 0 and use a constructor to do so
-    int score = 0;
+    public int score = 0;
     
     public Score(){
     }
@@ -64,15 +116,32 @@ class Score{
     // it is a method that will subtract 1 from the score if that happens
     public void SubtractfromScore(int score){
     score += 1;
+    }}
+
+public class Player{
+    public Player(int MovementSpeed, Rectangle PlayerRectangle){
+        Playerrec = PlayerRectangle;
+        Speed = MovementSpeed;
+    }
+    Rectangle Playerrec;
+    int Speed;
+    public void input(){
+                if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+                if (Playerrec.x < 780)
+                Playerrec.x += Speed;
+                }
+                
+                if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
+                if (Playerrec.x > 0)
+                Playerrec.x -= Speed;
+                }
     }
 
-    public int ReturnScore(){
-        return score;
+    public void drawplayer(){
+        Raylib.DrawRectangleRec(Playerrec, Color.WHITE);
     }
 }
-class Player{
 
-}
 class Visuals{
     
 }
