@@ -1,0 +1,7 @@
+var Squarerectangle = new Rectangle (square.Position.x, square.Position.y, 20, 20);
+                if (Raylib.CheckCollisionRecs(PlayerRectangle, Squarerectangle)){
+                            Score.SubtractfromScore();
+                        }
+                //if (Raylib.CheckCollisionRecs(PlayerRectangle, circle)){
+                            //Score.AddtoScore;
+                        //}
