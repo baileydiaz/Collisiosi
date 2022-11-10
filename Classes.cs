@@ -123,18 +123,20 @@ public class Player{
         Playerrec = PlayerRectangle;
         Speed = MovementSpeed;
     }
-    Rectangle Playerrec;
+    public Rectangle Playerrec{get;set;}
     int Speed;
     public void input(){
+                var rec = Playerrec; 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {
                 if (Playerrec.x < 780)
-                Playerrec.x += Speed;
+                rec.x += Speed;
                 }
                 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {
                 if (Playerrec.x > 0)
-                Playerrec.x -= Speed;
+                rec.x -= Speed;
                 }
+                Playerrec = rec;
     }
 
     public void drawplayer(){
